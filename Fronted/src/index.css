@@ -3,6 +3,7 @@ body {
   height: 100%;
   font-family: 'Montserrat', sans-serif;
     background-color: #F3F3F4;
+    overflow-x: hidden;
 }
 
 
@@ -13,8 +14,7 @@ body {
   ::-webkit-scrollbar:window-inactive {
     display: none;
   }
-  ::-webkit-scrollbar:corner-present  {
-   }
+ 
   ::-webkit-scrollbar-track-piece {
     border-radius: 2px;
     background-color: rgb(40, 119, 198);

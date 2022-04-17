@@ -1,36 +1,71 @@
 .sidebar{
     flex: 1;
     height: calc(100vh - 50px);
-    background-color: rgb(157, 157, 233);
+    background-color:#2f3e4d;
     position: sticky;
     top: 50px;
     overflow: hidden;
 
 }
 
+
+.apple{
+    color: white;
+    font-size: 6rem;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #293846;
+}
+
 .sidebarWrapper{
-    padding: 20px;
-    color: #555;
+    padding-top: 10px;
+    color: rgb(201, 32, 32);
 }
 
 .sidebarMenu{
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .sidebarList{
     list-style: none;
-    padding: 5px;
+    padding: 0px;
 }
 
 .sidebarListItem{
-    padding: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #a7b1c2;
+    padding: 10px 17px;
+    width: 100%;
     display: flex;
     align-items: center;
     border-radius: 10px;
     cursor: pointer;
+    margin-top: 20px;
 }
-
+.icon-side{
+    width: 31px;
+    height: 31px;
+    color: #a7b1c2;
+    border-radius: 50px;
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 7px;
+}
 .sidebarListItem.active, 
 .sidebarListItem:hover{
-    background-color: rgb(229, 229, 240);
+    background-color: #293846;
+    color: white;
+}
+
+.sidebarListItem:hover .icon-side{
+    color: white;
+}
+
+.sidebarListItem.active .icon-side{
+    color: white;
 }

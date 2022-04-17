@@ -2,6 +2,7 @@ import "./header.css";
 import { SiDeno } from "react-icons/si";
 import { Language, NotificationsNone, Settings } from "@material-ui/icons";
 import React from "react";
+import { Link } from "react-router-dom";
 
 class Header extends React.Component{
 
@@ -43,10 +44,15 @@ componentDidMount() {
       <div className="topbar">
         <div className="topbarWrapper">
           <div className="topLeft">
+          <Link to="/" style={{textDecoration:'none'}}>
+
             <h1 className="logo">
-              {" "}
+              {" "}      
+
               <SiDeno></SiDeno> Green <span>Life</span>
             </h1>
+            </Link>
+
           </div>
 
           <div className="topCenter">
@@ -79,7 +85,7 @@ componentDidMount() {
               </span>
             </div>
             <img
-              src="http://ratingargentina.com/download/multimedia.normal.918abbe1af25a0de.6576612d656c6669652d653176372d313633303831333239383636342d616c6c5f6e6f726d616c2e77656270.webp"
+              src="https://es.web.img3.acsta.net/pictures/17/06/14/13/48/489688.jpg"
               alt=""
               className="topAvatar"
             />
