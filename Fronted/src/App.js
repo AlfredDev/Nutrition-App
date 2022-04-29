@@ -1,7 +1,6 @@
 import './App.css';
 import Header from './Components/Header/header';
 import Home from './Components/Pages/home/Home';
-import Sidebar from './Components/Sidebar/Sidebar';
 import {
   BrowserRouter,
   Routes,
@@ -11,29 +10,25 @@ import Agenda from './Components/Pages/agenda/Agenda';
 import Clientes from './Components/Pages/clientes/Clientes';
 import Recetas from './Components/Pages/recetas/Recetas';
 import Consultas from './Components/Pages/consultas/Consultas';
+import SidebarEx from "./Components/SideBarAx/SidebarEx";
 
 function App() {
   return (
     <>
-
-    <BrowserRouter>
-
+      <BrowserRouter>
         <Header></Header>
+        <SidebarEx />
+        <div class="home_content">
+          <Routes>
+            <Route path="/" exact element={<Home />} />
+            <Route path="/agenda" exact element={<Agenda />} />
+            <Route path="/clientes" exact element={<Clientes />} />
+            <Route path="/recetas" exact element={<Recetas />} />
+            <Route path="/appointments" exact element={<Consultas />} />
 
-      <div className='container'>
-        <Sidebar></Sidebar>
-        <Routes>
-        <Route path="/" exact element={<Home/>}/>
-        <Route path="/agenda" exact element={<Agenda/>}/>
-        <Route path="/clientes" exact element={<Clientes/>}/>
-        <Route path="/recetas" exact element={<Recetas/>}/>
-        <Route path="/appointments" exact element={<Consultas/>}/>
-
-        </Routes>
-      </div>
-
+          </Routes>
+        </div>
       </BrowserRouter>
-
     </>
   );
 }

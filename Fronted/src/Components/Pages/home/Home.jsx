@@ -1,10 +1,9 @@
 import React from "react";
 import "./home.css";
-import AddIcon from '@mui/icons-material/Add';
 function Home() {
   return (
     <div className="home">
-      
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum quod saepe at voluptatem deleniti fuga et, doloremque amet dolore vel voluptas cupiditate, ipsam eligendi obcaecati laborum quae dignissimos! Voluptatem, corrupti.
     </div>
   );
 }
