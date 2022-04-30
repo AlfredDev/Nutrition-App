@@ -8,7 +8,9 @@ import { Link } from "react-router-dom";
 import "./style.css";
 import { useState } from "react";
 import AlarmOnIcon from "@mui/icons-material/AlarmOn";
-import GroupAddIcon from '@mui/icons-material/GroupAdd';
+import GroupAddIcon from "@mui/icons-material/GroupAdd";
+
+
 const Items = [
   {
     display: "Pagina Inicial",
@@ -43,13 +45,14 @@ const Items = [
   {
     display: "Agregar Cliente",
     icon: GroupAddIcon,
-    to: "/",
+    to: "/addmodal",
     section: "",
-  }
+  },
 ];
 
 const SidebarEx = () => {
   const [active, setActive] = useState("sidebar");
+
 
   return (
     <div className={active}>
@@ -74,7 +77,7 @@ const SidebarEx = () => {
       <ul className="nav_list">
         {Items.map((item, index) => (
           <li>
-            <Link to={item.to} key={index}>
+            <Link to={item.to} key={index} >
               <i className="bx">
                 <item.icon />
               </i>
