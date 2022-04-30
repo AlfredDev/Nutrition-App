@@ -1,56 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", Arial, Helvetica, sans-serif;
-}
 body {
-  height: 100%;
-  font-family: 'Montserrat', sans-serif;
-    background-color: #F3F3F4;
-    position: relative;
-    min-height: 100vh;
-    width: 100%;
-    overflow: hidden;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-
-::-webkit-scrollbar {
-    width: 12px;
-    height: 12px;
-  }
-  ::-webkit-scrollbar:window-inactive {
-    display: none;
-  }
- 
-  ::-webkit-scrollbar-track-piece {
-    border-radius: 2px;
-    background-color: rgb(40, 119, 198);
-    background-clip: content-box;
-    border-radius: 6px;
-    border: solid 4px transparent;
-  }
-  ::-webkit-scrollbar-track-piece:decrement {
-    background: black;
-    background-clip: content-box;
-    border: solid 4px transparent;
-  }
-
-  ::-webkit-scrollbar-thumb  {
-    height: 10px;
-    width: 4px;
-    background-color: #1AB394;
-    border-radius: 6px;
-    box-shadow: 0 3px 6px -2px rgba(51,0,51,0.5);
-  }
-  ::-webkit-scrollbar-corner {
-    background: transparent ;
-  }
-  ::-webkit-resizer {
-    background: transparent url(https://elcssar.com/ejemplos/expandIcon.png) no-repeat -1px -1px;
-  }
-  ::-webkit-scrollbar-track-piece:no-button {
-    background-color: red;
-  }
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

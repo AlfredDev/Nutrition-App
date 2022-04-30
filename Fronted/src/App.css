@@ -1,16 +1,75 @@
-/* .container{
-  display: flex;
-} */
-.home_content {
-  position: absolute;
-  height: 100%;
-  width: calc(100% - 78px);
-  left: 78px;
-  transition: all 0.5s ease;
-  overflow: scroll;
+.App {
+  text-align: center;
 }
 
-.sidebar.active~.home_content {
-  width: calc(100% - 240px);
-  left: 240px;
+
+html{
+  background: #ddd;
+  height: 100%;
+  display: flex;
 }
+
+body{
+  width: 100%;
+  margin:auto;
+}
+
+.todo-list{
+  background: #fff;
+  font-size: 15px;
+  max-width: 300px;
+  margin:auto;
+  margin-bottom:20px;
+  padding: 8px 16px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+
+}
+
+.btn {
+  outline: none;
+  padding: 8px;
+  font-size: 15px;
+  border: 0px solid;
+  border-radius: 5px;
+  color: blue;
+}
+.btn[disabled]{
+  opacity: 0.3;
+}
+
+/** TODO*/
+.file-input{
+  padding: 2px;
+  background: #f8f8f8;
+}
+
+.file-input > .text {
+  outline: none;
+  padding: 0px 10px;
+  font-size: 15px;
+  width: 230px;
+  height: 46px;
+  background:transparent;
+  border: 0px solid;
+}
+
+.todo {
+  display: flex;
+  position: relative;
+  padding: 1em 1em 1em 16%;
+  margin: 0 auto;
+  cursor: pointer; 
+  border-bottom: solid 1px red; 
+}
+
+.todo__text{
+  margin-left: 20px;
+  font-size: 1.2rem;
+
+}
+
+
+
+
+
+
