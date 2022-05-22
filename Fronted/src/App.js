@@ -12,11 +12,14 @@ import Recetas from './Components/Pages/recetas/Recetas';
 import Consultas from './Components/Pages/consultas/Consultas';
 import SidebarEx from "./Components/SideBarAx/SidebarEx";
 import AddCliente from './Components/Modal/AddCliente/AddCliente';
+// import Login from './Components/Login/Login';
 
 
 function App() {
   return (
     <>
+
+    
       <BrowserRouter>
         <Header></Header>
         <SidebarEx />

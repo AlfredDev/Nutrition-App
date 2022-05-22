@@ -1,0 +1,16 @@
+.modal-title {
+     text-align: center;
+     font-size:26px;
+     font-weight:700;
+
+ }
+
+ .modal-title  title{
+     font-size:1.1rem;
+ }
+
+ .modal-header  .description {
+     font-size:1em;
+     text-align: center;
+     font-weight: 200;
+ }

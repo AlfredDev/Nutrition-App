@@ -60,7 +60,7 @@ const SidebarEx = () => {
         <div class="logo">
           <div class="logo_name"> Dashboard </div>
         </div>
-        e
+        
         <i
           class="bx"
           id="btn"
