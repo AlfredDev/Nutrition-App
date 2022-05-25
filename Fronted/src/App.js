@@ -23,7 +23,7 @@ function App() {
       <BrowserRouter>
         <Header></Header>
         <SidebarEx />
-        <div class="home_content">
+        <div className="home_content">
           <Routes>
             <Route path="/" exact element={<Home />} />
             <Route path="/agenda" exact element={<Agenda />} />

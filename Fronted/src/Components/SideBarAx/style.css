@@ -7,6 +7,7 @@
     height: 100%;
     padding: 6px 14px;
     transition: all 0.5s ease;
+    z-index: 99;
 }
 
 .sidebar.active {
@@ -28,9 +29,10 @@
     pointer-events: none;
 }
 
-.logo_content .logo i {
+.logo_content .logo .bx i {
     font-size: 28px;
     margin-right: 5px;
+    color: white;
 }
 
 .logo_content .logo .logo_name {
@@ -67,10 +69,12 @@
     margin: 10px 5px;
     position: relative;
     line-height: 50px;
+
 }
 
 
 .sidebar ul li .tooltip {
+    color: black;
     position: absolute;
     left: 126px;
     top: 0;
@@ -86,7 +90,7 @@
     opacity: 0;
     pointer-events: none;
     display: block;
-    z-index: 99;
+    /* z-index: 99; */
     overflow: hidden;
 }
 

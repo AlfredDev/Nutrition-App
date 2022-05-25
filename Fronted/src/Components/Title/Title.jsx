@@ -9,7 +9,7 @@ function Title(props) {
           <div className="title">{props.titulo}</div>
         </div>
         <div className="modal-description">
-          <div class="description">
+          <div className="description">
             {props.description}
           </div>
         </div>

@@ -1,83 +1,184 @@
-
-
-
 .close-modal {
-     position: absolute;
-     right: -14px;
-     margin-top: -10px;
-     -webkit-appearance: none;
-     padding: 0;
-     cursor: pointer;
-     background: 0 0;
-     border: 0;
- }
+  position: absolute;
+  right: -5px;
+  margin-top: -15px;
+  -webkit-appearance: none;
+  padding: 0;
+  cursor: pointer;
+  background: 0 0;
+  border: 0;
+}
 
+.modal,
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+}
 
- .modal, .overlay {
-     width: 100vw;
-     height: 100vh;
-     top: 0;
-     left: 0;
-     right: 0;
-     bottom: 0;
-     position: fixed;
- }
- 
- .overlay {
-     background: rgba(49,49,49,0.8);
- }
+.overlay {
+  background: rgba(49, 49, 49, 0.8);
+}
 
- .modal-content {
-     position: relative;
-     top: 40%;
-     left: 50%;
-     transform: translate(-50%, -50%);
-     line-height: 1.4;
-     background-clip: padding-box;
-     box-shadow: 0 1px 3px rgb(0 0 0 / 30%);
-     background: #f1f1f1;
-     padding: 14px 28px;
-     border-radius: 4px;
-     max-width: 600px;
-     min-width: 300px;
- }
+.modal-content {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1.4;
+  background-clip: padding-box;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 30%);
+  background: #f1f1f1;
+  padding: 14px 28px;
+  border-radius: 4px;
+  max-width: 800px;
+  min-width: 300px;
+}
 
- .modal-content a i{
-    height: 50px;
-    min-width: 50px;
-    border-radius: 12px;
-    line-height: 50px;
+.modal-content a i {
+  height: 50px;
+  min-width: 50px;
+  border-radius: 12px;
+  line-height: 50px;
+  text-align: center;
+  position: relative;
+  top: 6px;
+  left: 2px;
+}
+
+.modal-title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.modal-title title {
+  font-size: 1.1rem;
+}
+
+.modal-header .description {
+  font-size: 1em;
+  text-align: center;
+  font-weight: 200;
+}
+
+.modal-body {
+  padding: 20px 30px;
+  padding: top 0;
+  background: none;
+}
+
+form {
+  display: block;
+  margin-top: 20px;
+  margin-left: 25px;
+
+}
+
+.footer {
+    display: flex;
+    margin-top: 20px;
+    margin-left: 25px; 
+    margin-right: 25px;
+
+    justify-content:space-between; 
+    align-items:center;
+}
+
+.input {
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+  height: 32px;
+  border-radius: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 0px;
+  outline: none;
+}
+input:focus {
+  border: 1px solid #12896d;
+}
+
+label {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.content-side{
+    display:flex;
+}
+
+.side-left{
+    width: 50%;
+}
+
+.side-right{
+    width: 50%;
+    margin-left:0px;
+}
+
+.content-input span{
+    color:#12896d;
+}
+
+.icono {
+    padding: 5px;
+    color: gray;
+    min-width: 40px;
     text-align: center;
-    position: relative;
-    top: 6px;
-    left: 2px;
- }
+    border: 1px solid grey;
+  }
 
- .modal-title {
-     text-align: center;
-     font-size:26px;
-     font-weight:700;
+  .select{
+    width: 100%;
+    padding: 0px;
+    outline: none;
+  }
 
- }
+  .guardar{
+    background-color: #1AB394;
+    border-color: #1AB394;
+    width: 125px;
+  }
 
- .modal-title  title{
-     font-size:1.1rem;
- }
+  .guardar:hover{
+    background-color: #1ca085;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
 
- .modal-header  .description {
-     font-size:1em;
-     text-align: center;
-     font-weight: 200;
- }
+  .cancelar{
+    background-color: black;
+    border-color:1px solid #1AB394;
+  }
+   .cancelar:hover{
+    background-color: rgb(19, 18, 18);
 
- .modal-body {
-     padding:20px 30px;
-     padding: top 0;
-     background:none;
- }
+   }
 
- form{
-     display:block;
-     margin:0 ;
- }
+  .btn{
+    color: #FFFFFF;
 
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+  }

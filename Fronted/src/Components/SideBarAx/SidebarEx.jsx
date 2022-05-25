@@ -56,13 +56,13 @@ const SidebarEx = () => {
 
   return (
     <div className={active}>
-      <div class="logo_content">
-        <div class="logo">
-          <div class="logo_name"> Dashboard </div>
+      <div className="logo_content">
+        <div className="logo">
+          <div className="logo_name"> Dashboard </div>
         </div>
         
         <i
-          class="bx"
+          className="bx"
           id="btn"
           onClick={() =>
             active === "sidebar"
@@ -76,8 +76,8 @@ const SidebarEx = () => {
 
       <ul className="nav_list">
         {Items.map((item, index) => (
-          <li>
-            <Link to={item.to} key={index} >
+          <li key={index}>
+            <Link to={item.to} >
               <i className="bx">
                 <item.icon />
               </i>

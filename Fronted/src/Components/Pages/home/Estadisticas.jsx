@@ -2,6 +2,10 @@ import React from "react";
 import Title from "../../Title/Title";
 import "./home.css";
 import RemoveIcon from "@mui/icons-material/Remove";
+
+
+
+
 export default function Estadisticas() {
   return (
     <>
@@ -12,19 +16,19 @@ export default function Estadisticas() {
         />
         <div className="widget-content">
           <ul className="stats">
-            <li class="stat">
-              <h2 class="value">0 de 1</h2>
-              <div class="description">
-                <div class="text">Clientes activos sobre el total</div>
-                <div class="percentage">0%</div>
+            <li className="stat">
+              <h2 className="value">0 de 1</h2>
+              <div className="description">
+                <div className="text">Clientes activos sobre el total</div>
+                <div className="percentage">0%</div>
               </div>
             </li>
-            <li class="stat">
-              <h2 class="value">0</h2>
-              <div class="description">
-                <div class="text">Nuevos clientes este mes</div>
-                <div class="percentage">
-                  <div class="material-icons">
+            <li className="stat">
+              <h2 className="value">0</h2>
+              <div className="description">
+                <div className="text">Nuevos clientes este mes</div>
+                <div className="percentage">
+                  <div className="material-icons">
                     <RemoveIcon />
                   </div>
                 </div>
@@ -46,6 +50,9 @@ export default function Estadisticas() {
           titulo="Distribucion por edad"
           description="Distribucion de los clientes por edad"
         />
+        <div className="chart-container">
+              
+        </div>
       </div>
     </>
   );
