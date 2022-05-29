@@ -7,6 +7,7 @@ import com.example.nutririonbackend.Model.Paciente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -32,7 +33,7 @@ public class PacienteController {
         direccionPaciente.setCodigoPostal(pacienteDto.getCodigoPostal());
         direccionPaciente.setPaisResidencia(pacienteDto.getPaisResidencia());
         direccionPaciente.setTelefono(pacienteDto.getTelefono());
-
+        direccionPaciente.setIncorporacion(new Date());
         paciente.setDireccionPaciente(direccionPaciente);
 
         paciente_interfaz.savePaciente(paciente);

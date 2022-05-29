@@ -3,6 +3,7 @@ package com.example.nutririonbackend.Model;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 
@@ -15,8 +16,15 @@ public class DireccionPaciente {
     private String CodigoPostal;
     private String telefono;
     private String Correo;
+    private Date incorporacion;
 
+    public Date getIncorporacion() {
+        return incorporacion;
+    }
 
+    public void setIncorporacion(Date incorporacion) {
+        this.incorporacion = incorporacion;
+    }
 
     public DireccionPaciente() {
     }
@@ -28,6 +36,7 @@ public class DireccionPaciente {
         CodigoPostal = codigoPostal;
         this.telefono = telefono;
         Correo = correo;
+        incorporacion = new Date();
     }
 
     public int getIdDatos() {
