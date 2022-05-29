@@ -149,7 +149,7 @@ class AddCliente extends React.Component {
                             onChange={this.manejadorChange}
                           >
                             <optgroup label="Genero">
-                              <option value="Masculino" selected="selected">
+                              <option value="Masculino" defaultValue={"Maculino"}>
                                 Masculino
                               </option>
                               <option value="Femenino">Femenino</option>

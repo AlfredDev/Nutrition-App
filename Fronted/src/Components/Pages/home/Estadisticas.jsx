@@ -58,27 +58,27 @@ export default function Estadisticas(props) {
     ],
   };
 
-
-  function pacientesName(){
+  function pacientesName() {
     var paci = [];
     pacientes.forEach((paciente) => {
-        paci.push(paciente.id);
-    })
+      paci.push(paciente.id);
+    });
     return paci;
   }
 
-    function meses(){
-      var meses = [];
-      for(var i = 0; i < pacientes.length;i++){
-        let dateObj = new Date(pacientes[i].direccionPaciente.incorporacion);
-        const monthNameShort = dateObj.toLocaleString("en-US", { month: "short" });
- meses.push(monthNameShort);
-      }
-      // meses.push("Jul")
-      return meses;
+  function meses() {
+    var meses = [];
+    for (var i = 0; i < pacientes.length; i++) {
+      let dateObj = new Date(pacientes[i].direccionPaciente.incorporacion);
+      const monthNameShort = dateObj.toLocaleString("en-US", {
+        month: "short",
+      });
+      meses.push(monthNameShort);
     }
-
-
+    // meses.push("Jul")
+    return meses;
+  }
+      
   function CargaEdades() {
     pacientes.forEach((paciente) => {
       let i = calcularEdad(paciente.fechaNacimiento);

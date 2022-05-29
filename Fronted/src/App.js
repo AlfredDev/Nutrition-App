@@ -13,6 +13,7 @@ import Consultas from './Components/Pages/consultas/Consultas';
 import SidebarEx from "./Components/SideBarAx/SidebarEx";
 import AddCliente from './Components/Modal/AddCliente/AddCliente';
 // import Login from './Components/Login/Login';
+import Informacion from './Components/Pages/Informacion/Informacion';
 
 
 function App() {
@@ -31,6 +32,8 @@ function App() {
             <Route path="/recetas" exact element={<Recetas />} />
             <Route path="/appointments" exact element={<Consultas />} />
             <Route path="/addmodal" exact element={<AddCliente />} />
+            <Route path="/informacion/:id" exact element={<Informacion/>} />
+
             <Route>{'404'}</Route>
 
           </Routes>

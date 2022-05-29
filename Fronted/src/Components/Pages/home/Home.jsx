@@ -4,16 +4,15 @@ import AddIcon from "@mui/icons-material/Add";
 import { Link } from "react-router-dom";
 import Title from "../../Title/Title";
 // import PersonIcon from '@mui/icons-material/Person';
-import EventAvailableIcon from '@mui/icons-material/EventAvailable';
+import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 import { Person } from "@mui/icons-material";
 import Estadisticas from "./Estadisticas";
 import ImagenMujer from "./ImagenMujer";
 import ImagenHombre from "./ImagenHombre";
 
 export default function Home() {
+  const [pacientes,setPacientes] = useState([]);
 
-  const [pacientes, setPacientes] = useState([]);
-  
   useEffect(() => {
     fetch("http://localhost:8080/paciente/getAllPacientes")
       .then((res) => res.json())
@@ -22,11 +21,11 @@ export default function Home() {
       });
   }, []);
 
-  function Genero(gender){
-      if(gender === "Femenino"){
-        return <ImagenMujer/>;
-      }
-      return <ImagenHombre/>;
+  function Genero(gender) {
+    if (gender === "Femenino") {
+      return <ImagenMujer />;
+    }
+    return <ImagenHombre />;
   }
 
   return (
@@ -57,36 +56,36 @@ export default function Home() {
             </form>
             <div className="search-result pacientes">
               <div className="container-pacientes">
-
-                {pacientes.map((paciente) =>(
-                   <div className="paciente-card" key={paciente.id}>
-                   <div className="foto">
-                     {Genero(paciente.genero)}
-                   </div>
-                   <div className="detalles">
-                     <h3 className="name">{paciente.nombre}</h3>
-                     <i className="mdi">
-                       <Person />
-                     </i>
-                     <div className="occupation">{paciente.ocupacion}</div>
-                     <div className="infos">
-                       <div className="info small">
-                         <i className="icon-agenda"><EventAvailableIcon/> </i>
-                         Última consulta  17 de mayo
-                       </div>
-                     </div>
-                   </div>
-                 </div>
-                ))}             
+                {pacientes.map((paciente) => (
+                  <Link key={paciente.id} to={`/informacion/${paciente.id}`}>
+                    <div className="paciente-card" >
+                      <div className="foto">{Genero(paciente.genero)}</div>
+                      <div className="detalles">
+                        <h3 className="name">{paciente.nombre}</h3>
+                        <i className="mdi">
+                          <Person />
+                        </i>
+                        <div className="occupation">{paciente.ocupacion}</div>
+                        <div className="infos">
+                          <div className="info small">
+                            <i className="icon-agenda">
+                              <EventAvailableIcon />{" "}
+                            </i>
+                            Última consulta 17 de mayo
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
         </div>
         <div className="estadisticas">
-            <Estadisticas pacientes={pacientes}/>
+          <Estadisticas pacientes={pacientes} />
         </div>
       </div>
     </div>
   );
 }
-
