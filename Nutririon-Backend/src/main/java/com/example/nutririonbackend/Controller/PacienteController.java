@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/paciente")
@@ -45,4 +46,10 @@ public class PacienteController {
     public List<Paciente> getAllPacientes(){
         return paciente_interfaz.getAllPacientes();
     }
+
+    @GetMapping("/findById/{id}")
+    public Optional<Paciente> findById(@PathVariable int id){
+        return paciente_interfaz.findById(id);
+    }
+
 }

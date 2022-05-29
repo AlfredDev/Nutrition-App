@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PacienteService implements PacienteInterfaz {
@@ -26,7 +27,7 @@ public class PacienteService implements PacienteInterfaz {
     }
 
     @Override
-    public Paciente getByid(int id) {
-        return null;
+    public Optional<Paciente> findById(int id) {
+        return pacienteRepository.findById(id);
     }
 }
