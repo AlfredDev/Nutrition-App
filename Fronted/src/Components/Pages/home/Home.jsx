@@ -13,7 +13,7 @@ import ImagenHombre from "./ImagenHombre";
 export default function Home() {
 
   const [pacientes, setPacientes] = useState([]);
-
+  
   useEffect(() => {
     fetch("http://localhost:8080/paciente/getAllPacientes")
       .then((res) => res.json())
@@ -83,7 +83,7 @@ export default function Home() {
           </div>
         </div>
         <div className="estadisticas">
-            <Estadisticas/>
+            <Estadisticas pacientes={pacientes}/>
         </div>
       </div>
     </div>

@@ -1,15 +1,13 @@
 import React from "react";
 
 function ImagenHombre() {
-  function rnd() {
-    return Math.floor(Math.random() * 50);
-  }
+  
 
   return (
     <>
       <img
         alt="Cliente ejemplo"
-        src={"https://randomuser.me/api/portraits/men/" + rnd() + ".jpg"}
+        src="https://app.nutrium.com/assets/fallback/patient/male_thumb_100-bb98a308d25b50a5cbf6deff9cf2fe38523b888152b97d69c56c51faf63c6178.png"
       />
     </>
   );
