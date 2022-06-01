@@ -167,6 +167,8 @@ class AddCliente extends React.Component {
                           </i>
                           <input
                             type="date"
+                            min="1970-01-01" 
+                            max="2016-01-01"
                             onChange={this.manejadorChange}
                             name="fechaNacimiento"
                           ></input>

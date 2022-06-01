@@ -12,14 +12,33 @@ import ImagenHombre from "./ImagenHombre";
 
 export default function Home() {
   const [pacientes,setPacientes] = useState([]);
+  const [busqueda,setBusqueda] = useState("");
+  const [tablaUsuarios, setTablaUsuarios]= useState([]);
 
   useEffect(() => {
     fetch("http://localhost:8080/paciente/getAllPacientes")
       .then((res) => res.json())
       .then((result) => {
         setPacientes(result);
+        setTablaUsuarios(result);
       });
   }, []);
+
+  const handleChange=e=>{
+    setBusqueda(e.target.value);
+    filtrar(e.target.value);
+  }
+
+  const filtrar=(terminoBusqueda)=>{
+    // eslint-disable-next-line
+    var resultadosBusqueda=tablaUsuarios.filter((elemento)=>{ 
+      if(elemento.nombre.toString().toLowerCase().includes(terminoBusqueda.toLowerCase()) || elemento.ocupacion.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
+      ){
+        return elemento;
+      }
+    });
+    setPacientes(resultadosBusqueda);
+  }
 
   function Genero(gender) {
     if (gender === "Femenino") {
@@ -49,8 +68,10 @@ export default function Home() {
               <div className="form-buscar">
                 <input
                   className="form-control"
+                  value={busqueda}
+                  onChange={handleChange}
                   type="text"
-                  placeholder="Buscar paciente por nombre"
+                  placeholder="Buscar paciente por nombre o ocupacion"
                 />
               </div>
             </form>

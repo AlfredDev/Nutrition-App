@@ -157,16 +157,18 @@ input {
   line-height: 1;
 }
 
-.ocupation {
+.occupation {
+  color: black;
   height: 16px;
-  overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   font-weight: 300;
+  margin-bottom: 10px;
 }
 
 .info {
   margin-top: 1px;
+  color: black;
   font-weight: 300;
   overflow: hidden;
   white-space: nowrap;

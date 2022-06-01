@@ -1,3 +1,53 @@
 .agenda{
     flex: 5;
+    height:auto;
 }
+
+.container-agenda{
+    margin-bottom: 50px;
+}
+
+.con-agenda{
+    background-color:white;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+    border-radius: 4px;
+   
+}
+
+.agenda-cita{
+    margin-top: 10px;
+    width: 100%;
+    height: auto;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+    background-color:white;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.add-btn{
+    position: absolute;
+    top: 20px;
+    left:20px;
+    width: 40px;
+    height: 40px;
+    background-color:#1AB394;
+    font-size:20px;
+    text-align:center;
+    border-radius: 10px;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    padding-top:5px;
+    cursor: pointer;
+}
+.add-btn:hover{
+    background-color:#149077;
+    box-shadow: 0 0 2px 2px #1AB394;
+    border: 1px solid white;
+}
+
+.add-btn i{
+    color: white;
+    font-size:20px;
+}
+
