@@ -52,4 +52,6 @@ public class PacienteController {
         return paciente_interfaz.findById(id);
     }
 
+
+
 }

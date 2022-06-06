@@ -30,4 +30,9 @@ public class PacienteService implements PacienteInterfaz {
     public Optional<Paciente> findById(int id) {
         return pacienteRepository.findById(id);
     }
+
+    @Override
+    public Paciente getPacienteId(int id) {
+        return pacienteRepository.getById(id);
+    }
 }

@@ -6,6 +6,7 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -22,6 +23,7 @@ public class Paciente {
     @JoinColumn(name = "direccion_id", unique = true)
     @OneToOne(cascade = CascadeType.ALL)
     private DireccionPaciente direccionPaciente;
+
 
     public Paciente() {
     }
