@@ -1,6 +1,6 @@
 package com.example.nutririonbackend.Model;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 
 import javax.persistence.*;
 import java.util.Date;

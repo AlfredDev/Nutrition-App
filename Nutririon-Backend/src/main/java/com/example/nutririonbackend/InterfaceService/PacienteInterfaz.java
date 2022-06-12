@@ -9,6 +9,5 @@ public interface PacienteInterfaz {
     public List<Paciente> getAllPacientes();
     public Paciente savePaciente(Paciente paciente);
     public Optional<Paciente> findById(int id);
-    public Paciente getPacienteId(int id);
 
 }

@@ -2,8 +2,11 @@ package com.example.nutririonbackend.Controller;
 
 import com.example.nutririonbackend.DTO.PacienteDto;
 import com.example.nutririonbackend.InterfaceService.PacienteInterfaz;
+import com.example.nutririonbackend.InterfaceService.UsuarioInterfaz;
 import com.example.nutririonbackend.Model.DireccionPaciente;
 import com.example.nutririonbackend.Model.Paciente;
+import com.example.nutririonbackend.Model.Usuario;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,16 +20,21 @@ import java.util.Optional;
 public class PacienteController {
     @Autowired
     private PacienteInterfaz paciente_interfaz;
+    @Autowired
+    private UsuarioInterfaz usuario_interfaz;
 
     @PostMapping("/addPaciente")
     public String addPaciente(@RequestBody PacienteDto pacienteDto) {
         System.out.println("paciente: " + pacienteDto);
+
+        Usuario usuId = usuario_interfaz.getId(pacienteDto.getIdUsuario());
 
         Paciente paciente = new Paciente();
         paciente.setNombre(pacienteDto.getNombre());
         paciente.setGenero(pacienteDto.getGenero());
         paciente.setOcupacion(pacienteDto.getOcupacion());
         paciente.setFechaNacimiento(pacienteDto.getFechaNacimiento());
+        paciente.setIDUsuario(usuId);
 
         DireccionPaciente direccionPaciente = new DireccionPaciente();
         direccionPaciente.setCorreo(pacienteDto.getCorreo());
@@ -35,7 +43,7 @@ public class PacienteController {
         direccionPaciente.setPaisResidencia(pacienteDto.getPaisResidencia());
         direccionPaciente.setTelefono(pacienteDto.getTelefono());
         direccionPaciente.setIncorporacion(new Date());
-        paciente.setDireccionPaciente(direccionPaciente);
+        paciente.setIDdireccionPaciente(direccionPaciente);
 
         paciente_interfaz.savePaciente(paciente);
 
@@ -51,7 +59,5 @@ public class PacienteController {
     public Optional<Paciente> findById(@PathVariable int id){
         return paciente_interfaz.findById(id);
     }
-
-
 
 }

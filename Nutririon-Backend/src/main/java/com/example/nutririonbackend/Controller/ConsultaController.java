@@ -2,9 +2,11 @@ package com.example.nutririonbackend.Controller;
 
 import com.example.nutririonbackend.DTO.ConsultaDto;
 import com.example.nutririonbackend.DTO.PacienteDto;
-import com.example.nutririonbackend.InterfaceService.ConsultaInterface;
+import com.example.nutririonbackend.InterfaceService.ConsultaInterfaz;
+import com.example.nutririonbackend.InterfaceService.ExpedienteInterfaz;
 import com.example.nutririonbackend.InterfaceService.PacienteInterfaz;
 import com.example.nutririonbackend.Model.Consulta;
+import com.example.nutririonbackend.Model.Expediente;
 import com.example.nutririonbackend.Model.Paciente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,12 +24,16 @@ public class ConsultaController {
     private PacienteInterfaz paciente_interfaz;
 
     @Autowired
-    private ConsultaInterface consultaInterface;
+    private ExpedienteInterfaz Expediente_interfaz;
+
+    @Autowired
+    private ConsultaInterfaz consultaInterface;
 
     @PostMapping("/addConsulta")
-    public String addPaciente(@RequestBody ConsultaDto consulta) {
+    public String addConsulta(@RequestBody ConsultaDto consulta) {
 
-        Paciente paciente = paciente_interfaz.getPacienteId(consulta.getIdPacient());
+        Paciente paciente = paciente_interfaz.getId(consulta.getIdPacient());
+        Expediente expediente = Expediente_interfaz.getId(consulta.getIDExpediente());
 
         Consulta cons = new Consulta();
         cons.setFin_consulta(consulta.getFin_consulta());
@@ -35,9 +41,10 @@ public class ConsultaController {
         cons.setLugarConsulta(consulta.getLugarConsulta());
         cons.setEstatus(consulta.getEstatus());
         cons.setLiga_video(consulta.getLiga_video());
-        cons.setPaciente(paciente);
+        cons.setIDpaciente(paciente);
+        cons.setIDExpediente(expediente);
 
-        consultaInterface.saveConsultas(cons);
+        consultaInterface.saveConsulta(cons);
 
         return "Consulta agregada";
 
@@ -45,7 +52,7 @@ public class ConsultaController {
 
     @GetMapping("/getAllConsultas")
     public List<Consulta> getAllPacientes() {
-        return consultaInterface.getAllConsultas();
+        return consultaInterface.getAllConsulta();
     }
 
 }

@@ -1,40 +1,140 @@
 package com.example.nutririonbackend.Model;
 
-import lombok.Data;
-import lombok.ToString;
+import java.sql.Date;
 
-import javax.persistence.*;
-import java.util.Date;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
-@Data
-@ToString
 public class Consulta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    private Date IniConsulta;
+    private Date FinConsulta;
+    private String Estado;
+    private String LConsulta;
+    private String Cliente;
+    private String VdoConferen;
 
-    private Date inicio_consulta;
-    private Date fin_consulta;
-    private  String estatus;
-    private String lugarConsulta;
-    private String liga_video;
 
-    @ManyToOne(optional = false, cascade = CascadeType.ALL)
-    private Paciente paciente;
+    @JoinColumn(name = "id", unique = true)
+    @OneToOne(cascade = CascadeType.ALL)
+    private Paciente IDpaciente;
+
+    
+    @JoinColumn(name = "id", unique = true)
+    @OneToOne(cascade = CascadeType.ALL)
+    private Expediente IDExpediente;
+
+    
 
 
     public Consulta() {
-
     }
 
-    public Consulta(int id, Date inicio_consulta, Date fin_consulta, String estatus, String lugarConsulta, String liga_video, Paciente paciente) {
-        this.id = id;
-        this.inicio_consulta = inicio_consulta;
-        this.fin_consulta = fin_consulta;
-        this.estatus = estatus;
-        this.lugarConsulta = lugarConsulta;
-        this.liga_video = liga_video;
-        this.paciente = paciente;
+
+    public Consulta(Date iniConsulta, Date finConsulta, String estado, String lConsulta, String cliente,
+            String vdoConferen, Paciente iDpaciente, Expediente iDExpediente) {
+        IniConsulta = iniConsulta;
+        FinConsulta = finConsulta;
+        Estado = estado;
+        LConsulta = lConsulta;
+        Cliente = cliente;
+        VdoConferen = vdoConferen;
+        IDpaciente = iDpaciente;
+        IDExpediente = iDExpediente;
     }
+
+
+    public Date getIniConsulta() {
+        return IniConsulta;
+    }
+
+
+    public void setIniConsulta(Date iniConsulta) {
+        IniConsulta = iniConsulta;
+    }
+
+
+    public Date getFinConsulta() {
+        return FinConsulta;
+    }
+
+
+    public void setFinConsulta(Date finConsulta) {
+        FinConsulta = finConsulta;
+    }
+
+
+    public String getEstado() {
+        return Estado;
+    }
+
+
+    public void setEstado(String estado) {
+        Estado = estado;
+    }
+
+
+    public String getLConsulta() {
+        return LConsulta;
+    }
+
+
+    public void setLConsulta(String lConsulta) {
+        LConsulta = lConsulta;
+    }
+
+
+    public String getCliente() {
+        return Cliente;
+    }
+
+
+    public void setCliente(String cliente) {
+        Cliente = cliente;
+    }
+
+
+    public String getVdoConferen() {
+        return VdoConferen;
+    }
+
+
+    public void setVdoConferen(String vdoConferen) {
+        VdoConferen = vdoConferen;
+    }
+
+
+    public Paciente getIDpaciente() {
+        return IDpaciente;
+    }
+
+
+    public void setIDpaciente(Paciente iDpaciente) {
+        IDpaciente = iDpaciente;
+    }
+
+
+    public Expediente getIDExpediente() {
+        return IDExpediente;
+    }
+
+
+    public void setIDExpediente(Expediente iDExpediente) {
+        IDExpediente = iDExpediente;
+    }
+
+
+    
+    
+
+
+    
 }

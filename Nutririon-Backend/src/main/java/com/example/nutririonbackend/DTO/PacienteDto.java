@@ -10,6 +10,7 @@ public class PacienteDto {
     private String Genero;
     private Date FechaNacimiento;
     private String Ocupacion;
+    private int IdUsuario;
     private String LugarConsulta;
     private String PaisResidencia;
     private String CodigoPostal;

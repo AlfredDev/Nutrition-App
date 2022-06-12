@@ -11,8 +11,8 @@ public class ConsultaDto {
     Date fin_consulta;
     String estatus;
     String liga_video;
-    private String lugarConsulta;
 
-    int idPacient;
+    int IDpaciente;
+    int IDExpediente;
 
 }
