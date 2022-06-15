@@ -31,7 +31,7 @@ const Items = [
     section: "",
   },
   {
-    display: "Recetas",
+    display: "Alimentos",
     icon: RestaurantMenuIcon,
     to: "/recetas",
     section: "",

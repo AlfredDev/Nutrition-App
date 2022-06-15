@@ -4,7 +4,7 @@ import Home from './Components/Pages/home/Home';
 import {
   BrowserRouter,
   Routes,
-  Route,
+  Route
 } from "react-router-dom";
 import Agenda from './Components/Pages/agenda/Agenda';
 import Clientes from './Components/Pages/clientes/Clientes';
@@ -17,22 +17,25 @@ import Informacion from './Components/Pages/Informacion/Informacion';
 
 
 function App() {
+
   return (
     <>
 
-    
+
       <BrowserRouter>
         <Header></Header>
         <SidebarEx />
         <div className="home_content">
-          <Routes>
+
+
+          <Routes >
             <Route path="/" exact element={<Home />} />
             <Route path="/agenda" exact element={<Agenda />} />
             <Route path="/clientes" exact element={<Clientes />} />
             <Route path="/recetas" exact element={<Recetas />} />
             <Route path="/appointments" exact element={<Consultas />} />
             <Route path="/addmodal" exact element={<AddCliente />} />
-            <Route path="/informacion/:id" exact element={<Informacion/>} />
+            <Route path="/informacion/:id" exact element={<Informacion />} />
 
             <Route>{'404'}</Route>
 

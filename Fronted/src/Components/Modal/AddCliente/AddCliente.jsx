@@ -13,6 +13,7 @@ import AssignmentIndIcon from "@mui/icons-material/AssignmentInd";
 import ApprovalIcon from "@mui/icons-material/Approval";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
 import axios from "axios";
+import AnimatedPage from "../../AnimationPage";
 
 class AddCliente extends React.Component {
   // const [modal] = useState(false);
@@ -90,6 +91,7 @@ class AddCliente extends React.Component {
 
   render() {
     return (
+      <AnimatedPage>
       <>
         {!this.modal && (
           <div className="modal">
@@ -287,7 +289,7 @@ class AddCliente extends React.Component {
             </div>
           </div>
         )}
-      </>
+      </></AnimatedPage>
     );
   }
 }

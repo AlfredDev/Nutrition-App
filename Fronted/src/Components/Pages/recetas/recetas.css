@@ -1,3 +1,72 @@
-.recetas{
-    flex: 5;
+.recetas {
+  flex: 5;
+  padding-bottom: 55px;
+}
+
+.recipes {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: #ffffff;
+  margin-top: 10px;
+  padding: 8px;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 15px;
+
+}
+
+.recipe-card {
+  width: 300px;
+  background-color: #ededed;
+  display: flex;
+  min-height: 218px;
+  flex-direction: column;
+  transition: all 0.2s ease;
+}
+
+.recipe-card .card-header {
+  padding: 10px;
+  height: auto;
+  margin: 0;
+  background-color: #1ab394;
+  color: #ededed;
+}
+
+.card-header h4 {
+  margin: 0;
+  font-weight: 300;
+  font-size: 0.9em;
+}
+.card-header h3 {
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+.card-body{
+    color: #383838;
+    padding: 10px;
+    flex-grow: 10;
+}
+
+
+
+ .card-body ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.card-footer {
+    color: #383838;
+    padding: 10px;
+    height: auto;
+    margin: 0;
+    border-top: 2px dashed #1ab394;
+}
+
+.alimentos-container{
+    margin: bottom 50px;
 }

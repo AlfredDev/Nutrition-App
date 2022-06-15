@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import AnimatedPage from "../../AnimationPage";
 
 export default function Informacion() {
   const { id } = useParams();
@@ -14,9 +15,11 @@ export default function Informacion() {
   }, [id]);
 
   return (
+    <AnimatedPage>
     <div>
       Cliente id: {id}
       <h2> {paciente.nombre}</h2>
     </div>
+    </AnimatedPage>
   );
 }

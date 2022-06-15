@@ -9,6 +9,7 @@ import { Person } from "@mui/icons-material";
 import Estadisticas from "./Estadisticas";
 import ImagenMujer from "./ImagenMujer";
 import ImagenHombre from "./ImagenHombre";
+import AnimatedPage from "../../AnimationPage";
 
 export default function Home() {
   const [pacientes,setPacientes] = useState([]);
@@ -48,6 +49,7 @@ export default function Home() {
   }
 
   return (
+    <AnimatedPage>
     <div className="home">
       <div className="content">
         <div className="user-panel">
@@ -108,5 +110,6 @@ export default function Home() {
         </div>
       </div>
     </div>
+    </AnimatedPage>
   );
 }
