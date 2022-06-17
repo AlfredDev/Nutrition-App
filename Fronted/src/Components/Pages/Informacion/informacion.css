@@ -1,0 +1,121 @@
+.informacion{
+     flex: 5;
+     height: 100%;
+ }
+
+ .informacion-content{
+     height:2250px;
+
+ }
+
+.static-header {
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
+.name-cliente {
+  width: 100%;
+  display: block;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid gray;
+}
+
+.steps{
+  margin-top: 20px;
+  width: 100%;
+  height:auto;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+
+}
+
+.steps .opciones{
+     background-color: #1AB394;
+     color: #FFFFFF;
+     width:300px;
+     height: 70px;
+     display:flex;
+     justify-content:space-between;
+     border-radius: 10px;
+     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+     cursor: pointer;
+     padding: 5px;
+     /* margin-left: 10px; */
+}
+
+.steps .content {
+  padding: 10px 15px;
+  align-items: center;
+}
+.opciones .icon {
+     position: relative;
+     left: 50px;
+}
+.steps .content .resume .title {
+     font-size: 1.3em;
+     font-weight: 400;
+     display: block;
+     width: 100%;
+}
+.steps .content .resume .description {
+     color: #FFFFFF;
+     font-size: 12px;
+}
+
+.steps .opciones:hover{
+     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;}
+
+a{
+     text-decoration: none;
+}
+
+.section{
+     display: flex;
+}
+
+.section-left{
+     width: 65%;
+}
+
+.section-right{
+     width:40%;
+}
+
+.section-right .form-section-consulta{
+     margin-left:12px;
+}
+
+.input-txt{
+     width: 95%;
+}
+.input-txt label{
+     font-size:1.2rem;
+}
+
+
+
+.form-section-consulta{
+     margin-top: 25px;
+     border-radius: 5px;
+     width: 95%;
+     background-color: #FFFFFF;
+     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;     padding: 10px;
+    
+}
+
+
+
+.form-section-consulta form{
+     display:flex;
+     flex-direction: column;
+     gap: 10px;
+     margin-bottom: 5px;
+}
+
+.observaciones{
+     height: 50px;
+}
+

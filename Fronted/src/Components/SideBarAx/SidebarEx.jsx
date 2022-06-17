@@ -27,7 +27,7 @@ const Items = [
   {
     display: "Clientes",
     icon: GroupIcon,
-    to: "/clientes",
+    to: "/",
     section: "",
   },
   {
@@ -39,7 +39,7 @@ const Items = [
   {
     display: "Programar Consulta",
     icon: AlarmOnIcon,
-    to: "/appointments",
+    to: "/agenda",
     section: "",
   },
   {

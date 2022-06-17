@@ -257,7 +257,7 @@ class AddCliente extends React.Component {
                       </div>
                       <div className="content-input">
                         <label htmlFor="">
-                          <span></span>Correo
+                          <span>*</span>Correo
                         </label>
                         <div className="input name">
                           <i className="icono">
