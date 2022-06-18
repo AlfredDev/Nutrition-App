@@ -26,4 +26,4 @@
 
     <h3> Modelo <h3/>
       
-      ![image](https://user-images.githubusercontent.com/56953358/174422511-7a8c5b25-e8a0-49ea-b1c1-c19191083bbb.png)
+   ![image](https://user-images.githubusercontent.com/56953358/174422511-7a8c5b25-e8a0-49ea-b1c1-c19191083bbb.png)
