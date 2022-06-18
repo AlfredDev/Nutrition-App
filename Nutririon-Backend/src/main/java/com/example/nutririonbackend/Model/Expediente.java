@@ -13,7 +13,7 @@ public class Expediente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @OneToOne(cascade = CascadeType.ALL)
-    InformacionGeneral InformacionGeneral = new InformacionGeneral();
+    InformacionGeneral InformacionGeneral = new InformacionGeneral(0,"","","","");
 
     public Expediente() {
     }
