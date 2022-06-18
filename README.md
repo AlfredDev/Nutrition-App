@@ -10,7 +10,7 @@
    * MySQL <br/>
    * JPA <br/>
    
-    <h4>Algunas Capturas<h4/>
+    <h3> Algunas Capturas <h3/>
 
    ![image](https://user-images.githubusercontent.com/56953358/174422285-2f2a644f-61d0-4b74-b285-bb81cfa4945f.png)
 
