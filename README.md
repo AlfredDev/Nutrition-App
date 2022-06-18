@@ -10,7 +10,8 @@
    * MySQL <br/>
    * JPA <br/>
    
-   
+    <h4>Algunas Capturas<h4/>
+
    ![image](https://user-images.githubusercontent.com/56953358/174422285-2f2a644f-61d0-4b74-b285-bb81cfa4945f.png)
 
    ![image](https://user-images.githubusercontent.com/56953358/174422297-6770d07b-2b95-40a8-bd06-a37371bd0316.png)
