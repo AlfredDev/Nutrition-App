@@ -1,0 +1,45 @@
+
+.mediciones-content {
+     height: 1950px;
+}
+
+.section-mediciones{
+     width: 100%;
+     display: flex;
+}
+
+.section-mediciones .section-left{
+     width: 35%;
+}
+
+
+.section-mediciones .section-right{
+     background: blueviolet;
+     width: 65%;
+}
+
+.imput-cont{
+     display: flex;
+     justify-content:space-between;
+     align-items:center;
+     margin-right: 15px;
+     border-bottom: 0.5px solid gray;
+     padding-bottom:8px;
+}
+
+.imput-cont h3{
+     margin-top: 10px;
+     font-weight: 400;
+     margin-right: 2px;
+}
+.imput-cont .TextField {
+     width:80px;
+     justify-content:center;
+     text-align:center;
+}
+
+.section-mediciones .btn {
+     margin-left: 20px;
+     margin-top: 15px;
+     width: 91%;
+}

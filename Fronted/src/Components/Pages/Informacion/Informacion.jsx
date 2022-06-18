@@ -39,7 +39,7 @@ export default function Informacion() {
           <BarExpediente id={id} />
           <div className="section">
             <div className="section-left">
-              <Iconsulta />
+              <Iconsulta id={id} />
               <Gestacion />
               <HistorialAlmentaria />
             </div>
