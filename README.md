@@ -23,3 +23,7 @@
    ![image](https://user-images.githubusercontent.com/56953358/174422403-d0156783-e736-49f2-a863-4d61cd345ab4.png)
 
    ![image](https://user-images.githubusercontent.com/56953358/174422415-32120cdd-0ff5-4128-9dd4-4a6ed432720b.png)
+
+    <h3> Modelo <h3/>
+      
+      ![image](https://user-images.githubusercontent.com/56953358/174422511-7a8c5b25-e8a0-49ea-b1c1-c19191083bbb.png)
