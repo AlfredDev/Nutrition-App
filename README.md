@@ -1,6 +1,6 @@
 # Nutrition - APP
 
-<h3>Nutrition - Aplicacion para el manejo de pacientes de un nutriolo o profesion a fin<h3/>
+<h3>Nutrition - Aplicacion para el manejo de pacientes de un nutriologo o profesion a fin<h3/>
   Proyecto de la clase de Ingenieria de Software
  <h4>Tecnologias<h4/>
    * Java Spring Boot <br/>
