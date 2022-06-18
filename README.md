@@ -3,10 +3,10 @@
 <h3>Nutrition - Aplicacion para el manejo de clientes<h3/>
   Proyecto de la clase de Ingenieria de Software
  <h4>Tecnologias<h4/>
-   * Java Spring Boot
-   * React
-   * MySQL
-   * JPA
+   * Java Spring Boot <br/>
+   * React <br/>
+   * MySQL <br/>
+   * JPA <br/>
    
    
    ![image](https://user-images.githubusercontent.com/56953358/174422285-2f2a644f-61d0-4b74-b285-bb81cfa4945f.png)
