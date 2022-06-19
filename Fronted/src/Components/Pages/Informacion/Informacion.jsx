@@ -40,7 +40,7 @@ export default function Informacion() {
           <div className="section">
             <div className="section-left">
               <Iconsulta id={id} />
-              <Gestacion />
+              <Gestacion id={id} />
               <HistorialAlmentaria />
             </div>
             <div className="section-right">
