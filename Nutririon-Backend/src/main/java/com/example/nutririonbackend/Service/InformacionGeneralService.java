@@ -1,10 +1,8 @@
 package com.example.nutririonbackend.Service;
 
 import com.example.nutririonbackend.InterfaceService.InformacionGeneralInterface;
-import com.example.nutririonbackend.Model.HistoriaPersonalSocial;
-import com.example.nutririonbackend.Model.InformacionGeneral;
-import com.example.nutririonbackend.Repository.HistoriaPersonalRepo;
-import com.example.nutririonbackend.Repository.InformacionGeneralRepo;
+import com.example.nutririonbackend.Model.*;
+import com.example.nutririonbackend.Repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +13,13 @@ public class InformacionGeneralService implements InformacionGeneralInterface{
     @Autowired
     InformacionGeneralRepo data;
     @Autowired
-    HistoriaPersonalRepo dataRepo;
+    HistoriaClinicalRepo dataRepo;
+    @Autowired
+    HistoriaAlimentariaRepo repoAlimeto;
+    @Autowired
+    HistoriaPersonalSocialRepo repoSocial;
+    @Autowired
+    ObersvacionesRepo opRepo;
 
     @Override
     public Optional<InformacionGeneral> listarId(int id) {
@@ -34,13 +38,46 @@ public class InformacionGeneralService implements InformacionGeneralInterface{
     }
 
     @Override
-    public String saveHistory(HistoriaPersonalSocial historiaPersonalSocial) {
+    public String saveHistory(HistoriaClinica historiaPersonalSocial) {
         dataRepo.save(historiaPersonalSocial);
         return "Agragado";
     }
 
     @Override
-    public Optional<HistoriaPersonalSocial> historiaPersonalSocialgetById(int id) {
+    public Optional<HistoriaClinica> historiaClinicagetById(int id) {
         return dataRepo.findById(id);
+    }
+
+    @Override
+    public String saveHistoryAlimentaria(HistoriaAlimentaria historiaAlimentaria) {
+        repoAlimeto.save(historiaAlimentaria);
+        return "Agregados";
+    }
+
+    @Override
+    public Optional<HistoriaAlimentaria> historiaAlimentariagetById(int id) {
+        return repoAlimeto.findById(id);
+    }
+
+    @Override
+    public String saveHistoriaPersonal(HistoriaPersonalSocial historiaPersonalSocial) {
+        repoSocial.save(historiaPersonalSocial);
+        return "AGREGADO";
+    }
+
+    @Override
+    public Optional<HistoriaPersonalSocial> historiaPersonalSocial(int id) {
+        return repoSocial.findById(id);
+    }
+
+    @Override
+    public String saveObercacion(Observaciones Observaciones) {
+        opRepo.save(Observaciones);
+        return "AGREAGDO";
+    }
+
+    @Override
+    public Optional<Observaciones> observaciongetByid(int id) {
+        return opRepo.findById(id);
     }
 }

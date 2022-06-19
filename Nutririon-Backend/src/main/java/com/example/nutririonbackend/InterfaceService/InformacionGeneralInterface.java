@@ -1,8 +1,7 @@
 package com.example.nutririonbackend.InterfaceService;
 
 
-import com.example.nutririonbackend.Model.HistoriaPersonalSocial;
-import com.example.nutririonbackend.Model.InformacionGeneral;
+import com.example.nutririonbackend.Model.*;
 
 import java.util.Optional;
 
@@ -13,9 +12,23 @@ public interface InformacionGeneralInterface {
     public  InformacionGeneral getById(int id);
 
     // Para la historia personal
-    public String saveHistory(HistoriaPersonalSocial historiaPersonalSocial);
-    public Optional<HistoriaPersonalSocial> historiaPersonalSocialgetById(int id);
+    public String saveHistory(HistoriaClinica historiaPersonalSocial);
+    public Optional<HistoriaClinica> historiaClinicagetById(int id);
 
+    // Para la historia alimentaria
+    public String saveHistoryAlimentaria(HistoriaAlimentaria historiaAlimentaria);
+    public Optional<HistoriaAlimentaria> historiaAlimentariagetById(int id);
+
+    // Para la historia personal y social
+
+    public String saveHistoriaPersonal(HistoriaPersonalSocial historiaPersonalSocial);
+    public Optional<HistoriaPersonalSocial> historiaPersonalSocial(int id);
+
+
+    // Para las observaciones
+
+    public String saveObercacion(Observaciones Observaciones);
+    public Optional<Observaciones> observaciongetByid(int id);
 }
 
 

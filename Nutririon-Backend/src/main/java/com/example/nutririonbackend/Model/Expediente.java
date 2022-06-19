@@ -15,7 +15,15 @@ public class Expediente {
     @OneToOne(cascade = CascadeType.ALL)
     InformacionGeneral InformacionGeneral = new InformacionGeneral(0,"","","","");
     @OneToOne(cascade = CascadeType.ALL)
-    HistoriaPersonalSocial historiaPersonalSocial = new HistoriaPersonalSocial(0,"","","","","");
+    HistoriaClinica historiaClinica = new HistoriaClinica(0,"","","","","");
+    @OneToOne(cascade = CascadeType.ALL)
+    HistoriaAlimentaria historiaAlimentaria = new HistoriaAlimentaria(0,"","","","","","","","","","");
+    @OneToOne(cascade = CascadeType.ALL)
+    HistoriaPersonalSocial historiaPersonalSocial = new HistoriaPersonalSocial(0,"","","","","","","");
+    @OneToOne(cascade = CascadeType.ALL)
+    Observaciones observaciones = new Observaciones(0,"");
+
     public Expediente() {
     }
+
 }

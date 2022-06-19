@@ -16,21 +16,25 @@ public class HistoriaPersonalSocial {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String patalogias;
-    private String medicacion;
-    private String antecedentePersonal;
-    private String antecedenteFamiliar;
-    private String otraInformacion;
+    private String funcionIntestinal;
+    private String calidadSueño;
+    private String fumador;
+    private String bebeAlcohol;
+    private String estadoCivil;
+    private String actividadFisica;
+    private  String otraInformacion;
 
-    public HistoriaPersonalSocial(int id, String patalogias, String medicacion, String antecedentePersonal, String antecedenteFamiliar, String otraInformacion) {
+    public HistoriaPersonalSocial(int id, String funcionIntestinal, String calidadSueño, String fumador, String bebeAlcohol, String estadoCivil, String actividadFisica, String otraInformacion) {
         this.id = id;
-        this.patalogias = patalogias;
-        this.medicacion = medicacion;
-        this.antecedentePersonal = antecedentePersonal;
-        this.antecedenteFamiliar = antecedenteFamiliar;
+        this.funcionIntestinal = funcionIntestinal;
+        this.calidadSueño = calidadSueño;
+        this.fumador = fumador;
+        this.bebeAlcohol = bebeAlcohol;
+        this.estadoCivil = estadoCivil;
+        this.actividadFisica = actividadFisica;
         this.otraInformacion = otraInformacion;
     }
 
-    public HistoriaPersonalSocial() {
-    }
+    public HistoriaPersonalSocial(){}
 }
+
