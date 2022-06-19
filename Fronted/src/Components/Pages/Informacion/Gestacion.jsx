@@ -3,8 +3,8 @@ import Title from "../../Title/Title";
 import TextField from "@mui/material/TextField";
 import axios from "axios";
 
-class Gestacion extends React.Component {
-
+class HistoryClinnic extends React.Component {
+// eslint-disable-next-line
   constructor(props) {
     super(props);
   }
@@ -75,11 +75,11 @@ class Gestacion extends React.Component {
         {" "}
         <div className="form-section-consulta">
           <div className="icono-titulo">
-            <Title
-              titulo="Historia personal y social"
-              description="Informaciones y hábitos fisiológicos y sociales del cliente
+          <Title
+          titulo="Historia clínica"
+          description="Patologías, medicación y antecedentes personales y familiares
           "
-            />
+        />
           </div>
           <form onSubmit={this.manejadorSubmit}>
             <TextField
@@ -130,4 +130,4 @@ class Gestacion extends React.Component {
   }
 }
 
-export default Gestacion;
+export default HistoryClinnic;

@@ -5,6 +5,7 @@ import Title from "../../Title/Title";
 import axios from "axios";
 
 class Iconsulta extends React.Component {
+  // eslint-disable-next-line
   constructor(props) {
     super(props);
   }

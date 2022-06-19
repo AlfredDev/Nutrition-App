@@ -3,8 +3,8 @@ import Title from "../../Title/Title";
 import TextField from "@mui/material/TextField";
 import axios from "axios";
 
-class HistorialAlmentaria extends React.Component {
-  // eslint-disable-next-line
+class HistoriaPersonal extends React.Component {
+// eslint-disable-next-line
   constructor(props) {
     super(props);
   }
@@ -12,15 +12,12 @@ class HistorialAlmentaria extends React.Component {
   state = {
     info: [],
     form: {
-      horaLevantarse: "",
-      horaAcostarse: "",
-      tipoDieta: "",
-      alimentoFavorito: "",
-      alimentoRechazado: "",
-      alergia: "",
-      intoleranciaAlimentaria: "",
-      deficienciasNutricionales: "",
-      ingestaAgua: "",
+      funcionIntestinal: "",
+      calidadSueño: "",
+      fumador: "",
+      bebeAlcohol: "",
+      estadoCivil: "",
+      actividadFisica: "",
       otraInformacion: "",
     },
   };
@@ -29,9 +26,10 @@ class HistorialAlmentaria extends React.Component {
     this.getInfo();
   }
 
+
   getInfo = async () => {
     let res = await axios.get(
-      `http://localhost:8080/expediente/historiaAliementariGetby/${this.props.id}`
+      `http://localhost:8080/expediente/historiaSocialgetByid/${this.props.id}`
     );
     let data = res.data;
     //console.log(data);
@@ -54,17 +52,14 @@ class HistorialAlmentaria extends React.Component {
   };
 
   updateNote = async () => {
-    const res = await fetch(
-      `http://localhost:8080/expediente/editarHistoriaAlimento/${this.state.info.id}`,
-      {
-        method: "put",
-        headers: {
-          "Content-Type": "application/json",
-          "x-access-token": "token-value",
-        },
-        body: JSON.stringify(this.state.form),
-      }
-    );
+    const res = await fetch(`http://localhost:8080/expediente/editarHistoriaSocial/${this.state.info.id}`, {
+      method: "put",
+      headers: {
+        "Content-Type": "application/json",
+        "x-access-token": "token-value",
+      },
+      body: JSON.stringify(this.state.form),
+    });
     if (!res.ok) {
       const message = `An error has occured: ${res.status} - ${res.statusText}`;
       throw new Error(message);
@@ -75,88 +70,66 @@ class HistorialAlmentaria extends React.Component {
     e.preventDefault();
   };
 
+
+
   render() {
     return (
       <>
         <div className="form-section-consulta">
           <Title
-            titulo="Historia alimentaria"
-            description="Hábitos y preferencias alimentarias del cliente"
+            titulo="Historia personal y social"
+            description="Informaciones y hábitos fisiológicos y sociales del cliente
+          "
           />
           <form onSubmit={this.manejadorSubmit}>
             <TextField
               className="input-txt"
               id="outlined-name"
-              label="Hora habitual para levantarse"
-              name="horaLevantarse"
+              label="Funcion instestinal"
+              name="funcionIntestinal"
               onChange={this.manejadorChange}
-              value={this.state.form.horaLevantarse}
+              value={this.state.form.funcionIntestinal}
               //   helperText="Please enter your name"
             />
             <TextField
               className="input-txt"
               id="outlined-name"
-              label="Hora habitual para acostarse"
-              name="horaAcostarse"
+              label="Calidad del sueño"
+              name="calidadSueño"
               onChange={this.manejadorChange}
-              value={this.state.form.horaAcostarse}
+              value={this.state.form.calidadSueño}
             />
             <TextField
               className="input-txt"
               id="outlined-name"
-              label="Tipo de dieta"
-              name="tipoDieta"
+              label="Fumador"
+              name="fumador"
               onChange={this.manejadorChange}
-              value={this.state.form.tipoDieta}
+              value={this.state.form.fumador}
             />
             <TextField
               className="input-txt"
               id="outlined-name"
-              label="Alimentos favoritos"
-              name="alimentoFavorito"
+              label="Bebe alchol"
+              name="bebeAlcohol"
               onChange={this.manejadorChange}
-              value={this.state.form.alimentoFavorito}
+              value={this.state.form.bebeAlcohol}
             />
             <TextField
               className="input-txt"
               id="outlined-name"
-              label="Alimentos rechazados"
-              name="alimentoRechazado"
-              value={this.state.form.alimentoRechazado}
-
+              label="Estado Civil"
+              name="estadoCivil"
               onChange={this.manejadorChange}
+              value={this.state.form.estadoCivil}
             />
             <TextField
               className="input-txt"
               id="outlined-name"
-              label="Alergias"
-              name="alergia"
+              label="Actividad fisica"
+              name="actividadFisica"
               onChange={this.manejadorChange}
-              value={this.state.form.alergia}
-            />
-            <TextField
-              className="input-txt"
-              id="outlined-name"
-              label="Intolerancis alimentarias"
-              name="intoleranciaAlimentaria"
-              onChange={this.manejadorChange}
-              value={this.state.form.intoleranciaAlimentaria}
-            />
-            <TextField
-              className="input-txt"
-              id="outlined-name"
-              label="Deficiencias nutricionales"
-              name="deficienciasNutricionales"
-              onChange={this.manejadorChange}
-              value={this.state.form.deficienciasNutricionales}
-            />
-            <TextField
-              className="input-txt"
-              id="outlined-name"
-              label="Ingesta de agua"
-              name="ingestaAgua"
-              onChange={this.manejadorChange}
-              value={this.state.form.ingestaAgua}
+              value={this.state.form.actividadFisica}
             />
             <TextField
               className="input-txt"
@@ -173,4 +146,4 @@ class HistorialAlmentaria extends React.Component {
   }
 }
 
-export default HistorialAlmentaria;
+export default HistoriaPersonal;

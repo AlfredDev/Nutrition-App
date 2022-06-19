@@ -3,12 +3,12 @@ import { useParams } from "react-router-dom";
 import AnimatedPage from "../../AnimationPage";
 import Title from "../../Title/Title";
 import BarExpediente from "./BarExpediente";
-import Gestacion from "./Gestacion";
-import HistoriaClinica from "./HistoriaClinica";
+import HistoryClinnic from "./Gestacion";
+import HistoriaPersonal from "./HistoriaPersonal";
 import HistorialAlmentaria from "./HistorialAlmentaria";
 import Iconsulta from "./Iconsulta";
 import "./informacion.css";
-import TextField from "@mui/material/TextField";
+import Observaciones from "./Observaciones";
 
 export default function Informacion() {
   const { id } = useParams();
@@ -40,26 +40,13 @@ export default function Informacion() {
           <div className="section">
             <div className="section-left">
               <Iconsulta id={id} />
-              <Gestacion id={id} />
-              <HistorialAlmentaria />
+              <HistoriaPersonal id={id} />
+
+              <HistorialAlmentaria id={id} />
             </div>
             <div className="section-right">
-              <HistoriaClinica />
-              <div className="form-section-consulta">
-                <Title
-                  titulo="Observaciones"
-                  description="Otras informaciones relevantes del cliente
-                  "
-                />
-                <form action="">
-                  <TextField 
-                    id="outlined-multiline-flexible"
-                    label="Obervaciones"
-                    multiline
-                    maxRows={5}
-                  />
-                </form>
-              </div>
+              <HistoryClinnic id={id} />
+              <Observaciones id={id} />
             </div>
           </div>
         </div>
