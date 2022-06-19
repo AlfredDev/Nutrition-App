@@ -14,7 +14,8 @@ public class Expediente {
     private int id;
     @OneToOne(cascade = CascadeType.ALL)
     InformacionGeneral InformacionGeneral = new InformacionGeneral(0,"","","","");
-
+    @OneToOne(cascade = CascadeType.ALL)
+    HistoriaPersonalSocial historiaPersonalSocial = new HistoriaPersonalSocial(0,"","","","","");
     public Expediente() {
     }
 }

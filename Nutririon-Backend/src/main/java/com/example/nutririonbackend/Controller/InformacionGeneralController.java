@@ -5,6 +5,7 @@ import com.example.nutririonbackend.DTO.PacienteDto;
 import com.example.nutririonbackend.InterfaceService.InformacionGeneralInterface;
 import com.example.nutririonbackend.InterfaceService.PacienteInterfaz;
 import com.example.nutririonbackend.Model.Expediente;
+import com.example.nutririonbackend.Model.HistoriaPersonalSocial;
 import com.example.nutririonbackend.Model.InformacionGeneral;
 import com.example.nutririonbackend.Model.Paciente;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,17 +28,16 @@ public class InformacionGeneralController {
 
 
     @PutMapping("/editar/{id}")
-    public  ResponseEntity<InformacionGeneral>  editar (@PathVariable("id") int id,@RequestBody InformacionGeneral model){
+    public ResponseEntity<InformacionGeneral> editar(@PathVariable("id") int id, @RequestBody InformacionGeneral model) {
         Optional<InformacionGeneral> informacionGeneral = service.listarId(id);
-        if (informacionGeneral.isPresent()){
+        if (informacionGeneral.isPresent()) {
             InformacionGeneral _info = informacionGeneral.get();
             _info.setMotivoConsulta(model.getMotivoConsulta());
             _info.setExpectativas(model.getExpectativas());
             _info.setObjetivosClinicos(model.getObjetivosClinicos());
             _info.setOtraInformacion(model.getOtraInformacion());
             return new ResponseEntity(service.save(_info), HttpStatus.OK);
-            }
-        else {
+        } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 
         }
@@ -56,14 +56,43 @@ public class InformacionGeneralController {
 
         expediente.setInformacionGeneral(informacion);
 
-       return service.save(informacion);
+        return service.save(informacion);
 
     }
 
 
-        @GetMapping("/findById/{id}")
-    public Optional<InformacionGeneral> findById(@PathVariable int id){
+    @GetMapping("/findById/{id}")
+    public Optional<InformacionGeneral> findById(@PathVariable int id) {
         return service.listarId(id);
     }
+
+    @GetMapping("/historiafindById/{id}")
+    public Optional<HistoriaPersonalSocial> historiafindById(@PathVariable int id) {
+        return service.historiaPersonalSocialgetById(id);
+    }
+
+    @PostMapping("/addHistoriaPersonal")
+    public String addHistoriaPersonal(@RequestBody HistoriaPersonalSocial infdato) {
+        return service.saveHistory(infdato);
+    }
+
+    @PutMapping("/editarHistoria/{id}")
+    public ResponseEntity<HistoriaPersonalSocial> editar(@PathVariable("id") int id, @RequestBody HistoriaPersonalSocial model) {
+        Optional<HistoriaPersonalSocial> historiaPersonalSocial = service.historiaPersonalSocialgetById(id);
+        if (historiaPersonalSocial.isPresent()) {
+            HistoriaPersonalSocial _info = historiaPersonalSocial.get();
+            _info.setPatalogias(model.getPatalogias());
+            _info.setMedicacion(model.getMedicacion());
+            _info.setAntecedentePersonal(model.getAntecedentePersonal());
+            _info.setAntecedenteFamiliar(model.getAntecedenteFamiliar());
+            _info.setOtraInformacion(model.getOtraInformacion());
+
+            return new ResponseEntity(service.saveHistory(_info), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+
+        }
+    }
+
 
 }
