@@ -22,6 +22,19 @@ export default function Informacion() {
       });
   }, [id]);
 
+  function calcularEdad(fecha) {
+    var hoy = new Date();
+    var cumpleanos = new Date(fecha);
+    var edad = hoy.getFullYear() - cumpleanos.getFullYear();
+    var m = hoy.getMonth() - cumpleanos.getMonth();
+
+    if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate())) {
+      edad--;
+    }
+
+    return edad;
+  }
+
   return (
     <AnimatedPage>
       <div className="informacion">
@@ -33,7 +46,12 @@ export default function Informacion() {
               description="Consulta y cambia informacion de tu cliente"
             />
             <div className="name-cliente">
-              Cliente <h2> {paciente.nombre}</h2>
+              <div>
+                Cliente: <h2> {paciente.nombre}</h2>
+              </div>
+              <div>
+                Edad: <h2>{calcularEdad(paciente.fechaNacimiento)}</h2>
+              </div>
             </div>
           </div>
           <BarExpediente id={id} />
