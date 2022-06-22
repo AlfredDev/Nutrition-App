@@ -1,6 +1,6 @@
 import "./header.css";
 import { SiDeno } from "react-icons/si";
-import { Language, NotificationsNone, Settings } from "@material-ui/icons";
+import {  NotificationsNone, Settings } from "@material-ui/icons";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -72,13 +72,7 @@ componentDidMount() {
               </span>
               <span className="topIconBadge">2</span>
             </div>
-            <div className="topbarIconContainer">
-              <span className="icon">
-                <Language />
-              </span>
-
-              <span className="topIconBadge">2</span>
-            </div>
+          
             <div className="topbarIconContainer">
               <span className="icon">
                 <Settings />

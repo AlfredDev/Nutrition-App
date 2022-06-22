@@ -15,6 +15,7 @@ import AddCliente from './Components/Modal/AddCliente/AddCliente';
 // import Login from './Components/Login/Login';
 import Informacion from './Components/Pages/Informacion/Informacion';
 import Mediciones from './Components/Pages/Informacion/mediciones/Mediciones';
+import Plan from './Components/Pages/Informacion/Planificacion/Plan';
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
             <Route path="/addmodal" exact element={<AddCliente />} />
             <Route path="/informacion/:id" exact element={<Informacion />} />
             <Route path="/mediciones/:id" exact element={<Mediciones />} />
+            <Route path="/plan/:id" exact element={<Plan />} />
 
             <Route>{'404'}</Route>
 

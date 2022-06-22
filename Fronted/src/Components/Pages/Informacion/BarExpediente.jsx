@@ -26,7 +26,7 @@ export default function BarExpediente(props) {
      display: "3. Planificacion",
      description: "Planificacion del plan alimenticio",
      icon: GrassIcon,
-     to: "/mediciones/:id",
+     to: `/plan/${props.id}`,
      section: "",
    },
    {

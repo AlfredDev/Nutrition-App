@@ -7,6 +7,7 @@ import "./Mediciones.css";
 import DatosAntropometricos from "./DatosAntropometricos";
 import DatosAnaliticos from "./DatosAnaliticos";
 import ComposicionCorporal from "./ComposicionCorporal";
+import GraficaPeso from "./GraficaPeso";
 
 function Mediciones() {
   const { id } = useParams();
@@ -25,11 +26,13 @@ function Mediciones() {
 
           <div className="section-mediciones">
             <div className="section-left">
-              <DatosAntropometricos />
+              <DatosAntropometricos id={id}/>
               <DatosAnaliticos/>
               <ComposicionCorporal/>
             </div>
-            <div className="section-right">x</div>
+            <div className="section-right">
+              <GraficaPeso id={id}/>
+            </div>
           </div>
         </div>
       </div>
