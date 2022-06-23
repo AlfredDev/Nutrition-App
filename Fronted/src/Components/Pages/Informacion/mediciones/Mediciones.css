@@ -1,6 +1,6 @@
 
 .mediciones-content {
-     height: 2000px;
+     height: 2080px;
 }
 
 .section-mediciones{
@@ -46,4 +46,14 @@
 .chart-container-line{
      width: 100%;
      height:auto;
+}
+.std{
+     margin-top: 40px;
+}
+
+.stds{
+     margin-top: 50px;
+     display:flex;
+     align-items: center;
+     flex-direction: column;
 }

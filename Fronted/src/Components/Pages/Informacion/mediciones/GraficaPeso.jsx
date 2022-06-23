@@ -3,18 +3,14 @@ import { Chart, registerables } from "chart.js";
 import Title from "../../../Title/Title";
 import React from "react";
 import axios from "axios";
+import Box from "@mui/material/Box";
+import Skeleton from "@mui/material/Skeleton";
+import Alert from '@mui/material/Alert';
 
 Chart.register(...registerables);
 
 class GraficaPeso extends React.Component {
-  // useEffect(() => {
-  //   fetch(`http://localhost:8080/datoAntro/getDatoantro/${props.id}/datoAntro`)
-  //   .then((res) => res.json())
-  //   .then((result) => {
-  //     setRegistros(result);
-  //   });
-  //   console.log(registros);
-  // }, [props.id]);
+
   state = {
     info: [],
   };
@@ -22,6 +18,8 @@ class GraficaPeso extends React.Component {
   componentDidMount() {
     this.getInfo();
   }
+
+  
 
   getalf() {
     var fecha = [];
@@ -44,6 +42,13 @@ class GraficaPeso extends React.Component {
       peso.push(info.peso);
     });
     return peso;
+  }
+  getAbdomianl() {
+    var pliege = [];
+    this.state.info.forEach((info) => {
+      pliege.push(info.perimetroCutaneoAbdominal);
+    });
+    return pliege;
   }
 
   getPerimetroCadera() {
@@ -73,7 +78,11 @@ class GraficaPeso extends React.Component {
     // console.log(this.state.info);
   };
 
+  
+
   render() {
+   
+
     const data = {
       labels: this.getalf(),
       datasets: [
@@ -81,8 +90,8 @@ class GraficaPeso extends React.Component {
           label: "Peso (KG)",
           data: this.getPeso(),
           fill: true,
-          backgroundColor: "rgba(75,192,192,0.2)",
-          borderColor: "rgba(75,192,192,1)",
+          backgroundColor: "rgba(75,192,192,0.3)",
+          borderColor: "#1AB394",
         },
         {
           label: "Perimetro de cadera",
@@ -96,20 +105,34 @@ class GraficaPeso extends React.Component {
           fill: false,
           borderColor: "yellow",
         },
+        {
+          label: "Pliegue cutaneo abdominal",
+          data: this.getAbdomianl(),
+          fill: false,
+          borderColor: "pink",
+        },
       ],
     };
     return (
       <>
         <div className="form-section-consulta">
           <Title
-            titulo="Historia Antropométrica"
-            description="Consulta la Historia antropométrica del cliente"
+            titulo="Progreso"
+            description="Consulta el progreso de tu cliente a lo largo del tiempo"
           />
           <div className="chart-container-line">
             <Line data={data} />
           </div>
         </div>
-        <div className="form-section-consulta"></div>
+        <div className="form-section-consulta">
+        <Alert severity="info">En desarrollo</Alert>
+
+          <Box sx={{ width: 800, height: 130 }}>
+            <Skeleton />
+            <Skeleton animation="wave" />
+            <Skeleton animation={false} />
+          </Box>
+        </div>
       </>
     );
   }
