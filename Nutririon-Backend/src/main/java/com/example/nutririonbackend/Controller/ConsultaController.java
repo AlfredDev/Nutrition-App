@@ -1,3 +1,4 @@
+
 package com.example.nutririonbackend.Controller;
 
 import com.example.nutririonbackend.DTO.ConsultaDto;
@@ -11,18 +12,27 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+/**
+ * Controlador de la consulta
+ *
+ * @author (Jose Alfredo Garcia Cortes)
+ * @version (2.0, FECHA 21 / 06 / 2022)
+ */
 @RestController
 @RequestMapping("/consulta")
 @CrossOrigin
+
 public class ConsultaController {
+
 
     @Autowired
     private PacienteInterfaz paciente_interfaz;
-
     @Autowired
     private ConsultaInterface consultaInterface;
-
+    /**
+     * @param consulta consulta de de los datos de consulta
+     * @return "Consulta agregada"
+     */
     @PostMapping("/addConsulta")
     public String addPaciente(@RequestBody ConsultaDto consulta) {
 
@@ -43,7 +53,9 @@ public class ConsultaController {
         return "Consulta agregada";
 
     }
-
+    /**
+     * @return interfas de la consulta
+     */
     @GetMapping("/getAllConsultas")
     public List<Consulta> getAllPacientes() {
         return consultaInterface.getAllConsultas();

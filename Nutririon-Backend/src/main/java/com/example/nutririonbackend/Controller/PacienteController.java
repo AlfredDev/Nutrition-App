@@ -1,3 +1,10 @@
+/**
+ * En esta clase se crean los servicios para manipular desde el controlador
+ * Esta clase contiene los metodos basicos de un CRUD
+ *
+ * @author (Jose Alfredo Garcia Cortes)
+ * @version (2.0, FECHA 21 / 06 / 2022)
+ */
 package com.example.nutririonbackend.Controller;
 
 import com.example.nutririonbackend.DTO.PacienteDto;
@@ -11,14 +18,24 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
-
+/**
+ * En esta clase se crean los servicios para manipular desde el controlador
+ * Esta clase contiene los metodos basicos de un CRUD
+ *
+ * @author (Jose Alfredo Garcia Cortes)
+ * @version (2.0, FECHA 21 / 06 / 2022)
+ */
 @RestController
 @RequestMapping("/paciente")
 @CrossOrigin
 public class PacienteController {
     @Autowired
     private PacienteInterfaz paciente_interfaz;
-
+    /**
+     * Edicion de datos
+     * @param pacienteDto acepta informacion del paciente
+     * @return regresa al paciente agregado
+     * */
     @PostMapping("/addPaciente")
     public String addPaciente(@RequestBody PacienteDto pacienteDto) {
         System.out.println("paciente: " + pacienteDto);
@@ -43,17 +60,23 @@ public class PacienteController {
 
         return "Paciente agregado";
     }
-
+    /**
+     *Generar una lista de pacientes
+     * @return  regresa una lista de los pacientes
+     * */
     @GetMapping("/getAllPacientes")
     public List<Paciente> getAllPacientes(){
         return paciente_interfaz.getAllPacientes();
     }
-
+    /**
+     * Buscar paciente
+     * @param id id de paciente
+     * @return paciente encontrado
+     * */
     @GetMapping("/findById/{id}")
     public Optional<Paciente> findById(@PathVariable int id){
         return paciente_interfaz.findById(id);
     }
-
 
 
 }

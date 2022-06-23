@@ -1,3 +1,10 @@
+/**
+ * En esta clase se crean los servicios para manipular desde el controlador
+ * Esta clase contiene los metodos basicos de un CRUD
+ *
+ * @author (Jose Alfredo Garcia Cortes)
+ * @version (2.0, FECHA 21 / 06 / 2022)
+ */
 package com.example.nutririonbackend.Service;
 
 import com.example.nutririonbackend.InterfaceService.InformacionGeneralInterface;
